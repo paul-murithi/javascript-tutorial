@@ -1,0 +1,14 @@
+body {
+    background-color: bisque;
+}
+button {
+    width: 8rem;
+    padding: 3px;
+    border-radius: 8px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.button-1 {
+    background-color: #000;
+    color: #fff;
+}

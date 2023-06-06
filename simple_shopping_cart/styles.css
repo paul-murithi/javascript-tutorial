@@ -1,0 +1,22 @@
+body {
+    background-color: #808080;
+}
+h2 {
+    color: #ffffff;
+}
+main {
+    padding: 20px;
+}
+button {
+    margin: 14px;
+    padding: 10px;
+    width: 7rem;
+    border: none;
+    background-color: green;
+    color: #ffffff;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgba(23, 174, 33, 0.8);
+    color: #ffffff;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: green;
+            border: none;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!--5:25:36-->
+        <h2>Rock paper scissors</h2>
+        <button type="button" onclick="
+            playGame('rock')
+        ">Rock</button>
+
+        <button type="button" onclick="
+            playGame('paper');
+        ">Paper</button>
+
+        <button type="button" onclick="
+            playGame('scissors');
+        ">Scissors</button>
+
+        <button title="Reset" type="button" onclick="resetScores()">Reset</button>
+
+        <p id="display-rslt"></p>
+    </main>
+    <script src="/rock_paper_scissors_basic_version/script.js"></script>
+</body>
+</html>
