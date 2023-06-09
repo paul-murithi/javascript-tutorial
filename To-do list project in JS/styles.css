@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+button:hover {
+    font-weight: bold;
+}
+form {
+    background-color: #808080;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    align-items: center;
+    margin-bottom: 0;
+}
+form input {
+    width: 50%;
+    margin-top: 10px;
+    outline: none;
+    height: 1.5rem;
+}
+form button {
+    margin-top: 10px;
+    width: 25%;
+    background-color: green;
+    border: none;
+    color: #fff;
+    height: 2rem;
+    cursor: pointer;
+}
+.display-par {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 5px;
+    row-gap: 18px;
+    font-weight: bold;
+    align-items: center;
+}
+.display-par button {
+    background-color: red;
+    color: #fff;
+    height: 1.5rem;
+    border: none;
+    cursor: pointer;
+}

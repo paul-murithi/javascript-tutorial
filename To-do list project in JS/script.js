@@ -3,8 +3,24 @@
 function renderToDo() {
     let toDoListHTML = '';
     for (let i = 0; i < toDoList.length; i++){
-        const todo = toDoList[i];
-        const html = `<p>${todo}</p>`
+        const todoObject = toDoList[i];
+        // console.log(todoObject); For testing purposes
+        // const name = todoObject.name;
+        // const dueDate = todoObject.dueDate;
+        const { dueDate} = todoObject;// destructuring
+        const { name} = todoObject;
+
+        const html = `
+        <div class = "display-par">
+            <div class = "display-par">${name}</div>
+            <div>${dueDate}</div>
+            <button onclick = "
+                toDoList.splice(${i}, 1);
+                renderToDo();
+            ">Delete</button></p>
+        </div>
+        `
+        
         
         toDoListHTML += html;
     }
@@ -15,8 +31,19 @@ function addToDo() {
      const inputElement = document.querySelector('input');
      const name = inputElement.value;
 
-     toDoList.push(name);
+     const dateInputElement = document.querySelector('.inputbx-2');
+     const dueDate = dateInputElement.value;
+     
+     toDoList.push({
+        // name: name,
+        // dueDate: dueDate
+            //Shorthand property in JS
+        name,
+        dueDate
+     });
+     
      inputElement.value = '';
+     dateInputElement.value = '';
      
      renderToDo();
  }
