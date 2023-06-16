@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assync js</title>
+</head>
+<body>
+    <h2>Assynchronous javascript</h2>
+    <main>
+        <h2>Rock paper scissors</h2>
+        <button type="button" onclick="
+            playGame('rock')
+        ">Rock</button>
+
+        <button type="button" onclick="
+            playGame('paper');
+        ">Paper</button>
+
+        <button type="button" onclick="
+            playGame('scissors');
+        ">Scissors</button>
+
+        <button title="Reset" type="button" onclick="resetScores()">Reset</button>
+
+        <button type="button" title="Auto play" class="auto-play-button" onclick="autoPlay()">Auto play</button>
+
+        <p id="display-rslt"></p>
+    </main>
+    <script src="/js-callbacks and assync/script.js"></script>
+    <script>
+        //Javascript set time out function
+        setTimeout(function(){
+            console.log('Javascript can also run assynchronous!');
+        }, 3000);
+
+        setInterval(function(){
+            // console.log('Set interval!');
+        }, 3000);
+        
+       // Javascript for each loop
+       const colors = ['Red','Green','Yellow','Black'];
+       colors.forEach(function(value, track){
+        if(value === 'Green'){
+            return;
+        }
+        console.log(track);
+        console.log(value);
+       });
+    
+   
+    //  Javascript setInterval function
+      
+      add = setInterval(function() {
+        // console.log(2 + 3);
+      }, 2000);
+      
+
+    </script>
+</body>
+</html>
