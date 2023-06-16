@@ -1,9 +1,10 @@
  const toDoList = [];
  
 function renderToDo() {
+    //updated to use for each instead of a for loop
     let toDoListHTML = '';
-    for (let i = 0; i < toDoList.length; i++){
-        const todoObject = toDoList[i];
+
+    toDoList.forEach(function(todoObject, index){
         // console.log(todoObject); For testing purposes
         // const name = todoObject.name;
         // const dueDate = todoObject.dueDate;
@@ -15,16 +16,21 @@ function renderToDo() {
             <div class = "display-par">${name}</div>
             <div>${dueDate}</div>
             <button onclick = "
-                toDoList.splice(${i}, 1);
-                renderToDo();
-            ">Delete</button></p>
+                
+            " class = "js-delete-btn">Delete</button></p>
         </div>
         `
-        
-        
         toDoListHTML += html;
-    }
+    });
+
+    //Add event listeners to the delete buttons: 
     document.querySelector('div').innerHTML = toDoListHTML;
+    document.querySelectorAll('.js-delete-btn').forEach((deleteButton, index) => {
+        deleteButton.addEventListener('click', () => {
+            toDoList.splice(index, 1);
+                renderToDo();
+        }  ); 
+    })
 }
 
 function addToDo() {
@@ -47,24 +53,3 @@ function addToDo() {
      
      renderToDo();
  }
-
- /*
- const bestTeams = ['Man city', 'Barcelona', 'Brighton', 'Bayern munich', 'Burnley', 'River plate', 'Chelsea'];
-
- for(let i = 0; i <= bestTeams.length - 1;i++) {
-    console.log(bestTeams[i]);
- }
- */
-/*
- const numbers = [30, 40, 30];
-let result = 0;
-for(let i = 0;i < numbers.length;i++) {
-    result += numbers[i];
-}
-// console.log(result);
-const doubleNumbers = [];
-for(let i = 0;i < numbers.length; i++) {
-    doubleNumbers.push(numbers[i] * 2);
-}
-console.log(doubleNumbers);
-*/
