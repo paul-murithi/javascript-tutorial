@@ -92,19 +92,44 @@ function playGame(playerMove) {
             //  }
 
             // localStorage.setItem('score', JSON.stringify(score));
-            let display_rslt = document.querySelector('#display-rslt');
+            let display_rslt = document.querySelector('#disp-par');
 
             display_rslt.innerHTML = `<b>You picked ${playerMove}. Computer picked ${computerMove}. ${result}</b>`;
 
         }
 
 function resetScores() {
-    //  score.wins = 0;
+   //  score.wins = 0;
     //  score.losses = 0;
     //   score.ties = 0;
     //  localStorage.removeItem('score');
-    let display_rslt = document.querySelector('#display-rslt');
-    display_rslt.innerHTML = "<b>Score reset!</b>";
+
+    let display_rslt = document.querySelector('#container');
+    display_rslt.classList.add('disp-parr');
+
+    display_rslt.innerHTML += "Are you sure you want to reset score?";
+
+    let newButton = document.createElement('button');
+    newButton.textContent = 'Yes';
+    newButton.classList.add('cancel-btn');
+    let newButton2 = document.createElement('button');
+    newButton2.textContent = 'No';
+
+    display_rslt.append(newButton);
+    display_rslt.append(newButton2);
+
+    let disp_par = document.getElementById('disp-par');
+
+    newButton.addEventListener('click', () => {
+      disp_par.innerHTML = "score reset";
+      display_rslt.innerHTML = "";
+    });
+
+    newButton2.addEventListener('click', () => {
+      display_rslt.innerHTML = "";
+      disp_par.innerHTML = "";
+    });
+
     }
 /**
  * // Assume you have a 'score' object that holds the game data
